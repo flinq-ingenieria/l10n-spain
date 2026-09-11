@@ -1,3 +1,4 @@
 from . import test_10n_es_verifactu
 from . import test_verifactu_chaining_lock
 from . import test_verifactu_invoice
+from . import test_verifactu_cron_lock
