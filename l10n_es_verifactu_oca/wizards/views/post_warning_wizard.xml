@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="post_warning_wizard_view_form" model="ir.ui.view">
+        <field name="name">l10n_es_verifactu_oca.post_warning.form</field>
+        <field name="model">l10n_es_verifactu_oca.post_warning</field>
+        <field name="arch" type="xml">
+            <form string="Post with VERI*FACTU warnings">
+                <div class="alert alert-warning" role="alert">
+                    <label
+                        for="message"
+                        string="The invoice is expected to be rejected by the AEAT. If you decide to post it anyway, you will have to correct it afterwards. The decision will be recorded in the invoice chatter."
+                        class="fw-normal mb-0"
+                    />
+                </div>
+                <field name="move_ids" invisible="1" />
+                <field
+                    name="message"
+                    readonly="1"
+                    nolabel="1"
+                    widget="text"
+                    class="o_wrap_text"
+                    colspan="4"
+                />
+                <footer>
+                    <button
+                        name="action_confirm"
+                        type="object"
+                        string="Post anyway"
+                        class="btn-danger"
+                        confirm="Are you sure you want to post the invoice despite these warnings?"
+                    />
+                    <button
+                        name="action_cancel"
+                        type="object"
+                        string="Go back and correct it"
+                        class="btn-primary"
+                    />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
